@@ -1,0 +1,179 @@
+// C:\Users\User\source\repos\database_test
+// MySQL workbench 8.0 CE 들어가
+service
+service_ID, type, weight, delivery_time, content, value
+모두 not null
+
+customer
+customer_ID, name, address, phone_number
+모두 not null
+
+package
+package_ID 이거
+package_type 이거
+package_weight
+package_delivery
+package_content 이거
+package_value
+count
+
+shipment
+shipment_ID 이거
+receiver_address 이거
+receiver_name 이거
+receiver_phone_number 이거
+receiving_date
+
+payment
+payment_ID 이거
+payment_date
+payment_method
+price_total
+delivery_charge
+
+track
+track_ID 이거
+shipment_ID 이거
+location_ID
+current_location
+state
+date
+time
+
+
+
+
+C00115 S04-000115 B00000115
+C10725 S04-000116(90000), S06-008082(25000) B00000512 B00000513
+C10808 S04-000117(600000) B00001164
+C21361 credit pick S04-000118(60000)
+C24926 S04-000119(300000), S06-008080(10000000) B00000913 B00000914
+C34512 S05-001167(2000)
+C16899 S05-001168(120000)
+C25174 S05-001169(60000)
+C26411 S05-001170(60000)
+C31596 credit pick S05-001171(400000), S06-008081(1500000)
+C01167 
+C25167 
+C42156 
+C29941
+C13357 credit pick
+
+insert into shipment values ("S04-000115", "9, Eunseong-ro 68beon-gil, Bucheon-si, Gyeonggi-do", "Somi Jun", "010-9955-4696", "2023-02-01", "2023-02-02", "2023-02-02", "C00115", "S01", "P31514")
+insert into shipment values ("S04-000116", "304, Seongho-ro, Sangnok-gu, Ansan-si, Gyeonggi-do", "Minhung Choi", "010-0505-8550", "2023-02-15", "2023-02-16", "2023-02-17", "C10725", "S03", "P51421")
+insert into shipment values ("S04-000117", "177, Jwaui-gil, Gunnae-myeon, Pocheon-si, Gyeonggi-do", "Doyoung Kim", "010-7817-1743", "2023-02-02", "2023-02-23", "2023-02-23", "C10808", "S11", "P01586")
+insert into shipment values ("S04-000118", "25, Geumhwa-ro, Seo-gu, Gwangju", "Jaehyun Jung", "010-1383-5026", "2023-02-03", "2023-02-05", "2023-02-04", "C21361", "S07", "P51634")
+insert into shipment values ("S04-000119", "29, Insubong-ro 55-gil, Gangbuk-gu", "Jin Jun", "010-8690-6640", "2023-02-04", "2023-02-25", "2023-02-25", "C24926", "S12", "P63516")
+insert into shipment values ("S05-001167", "48-3, Hwagok-ro 31-gil, Gangseo-gu", "Jiyoon Park", "010-8866-0830", "2023-05-16", "2023-05-30", "2023-05-28", "C34512", "S05", "P84611")
+insert into shipment values ("S05-001168", "17, Sanggye-ro 11-gil, Nowon-gu", "Jinho Hong", "010-3363-5670", "2023-05-17", "2023-05-19", "2023-05-20", "C16899", "S08", "P46123")
+insert into shipment values ("S05-001169", "62, Ttukseom-ro 22ga-gil, Gwangjin-gu", "EunJi Jung", "010-7316-4716", "2023-05-16", "2023-05-23", "2023-05-23", "C25174", "S09", "P54193")
+insert into shipment values ("S05-001170", "289, Seongseoseo-ro, Dalseo-gu,", "Juyeon Lee", "010-3446-0343", "2023-05-19", "2023-05-21", "2023-05-21", "C26411", "S13", "P01547")
+insert into shipment values ("S05-001171", "15, Gyeongyeol-ro 212beon-gil, Buk-gu, Gwangju", "Taehun Lee", "010-5508-1040", "2023-05-23", "2023-05-30", "2023-05-30", "C31596", "S14", "P15647")
+insert into shipment values ("S06-008080", "13-11, Wadong-ro 227beon-gil, Gangwon-do", "YoungJi Lee", "010-5228-7652", "2023-03-15", "2023-03-31", "2023-03-31", "C24926", "S15", "P25311")
+insert into shipment values ("S06-008081", "32-59, Totgol-gil, Cheongpyeong-myeon, Gapyeong-gun, Gyeonggi-do", "Jaemin Na", "010-3511-5878", "2023-03-18", "2023-03-23", "2023-03-23", "C31596", "S14", "P31589")
+insert into shipment values ("S06-008082", "33, Onyang-ro, Onyang-eup, Ulju-gun", "Younghoon Kim", "010-6122-9691", "2023-03-20", "2023-03-22", "2023-03-21", "C10725", "S13", "P45623")
+
+늦게 도착한 애들
+S04-000115 pick
+S04-000116
+S04-000117
+S04-000118 pick
+S04-000119
+S05-001167 pick
+S05-001168
+S05-001169
+S05-001170
+S05-001171
+S06-008080
+S06-008081
+S06-008082 pick
+
+S1~6
+S7~12
+S13~15
+
+P51421
+P31514
+P84611
+// flat envelope
+P01586
+P51634
+P63516
+P46123
+P54193
+P01547
+// small box
+P15647
+P25311
+P31589
+P45623
+P86315
+P16012
+// large boxes
+
+
+1721
+1167
+1526
+// truck
+2015
+2466
+// airplane
+3915
+4169
+1400
+2063
+// warehouse
+1000
+// receiver
+2000
+// sender
+
+
+1. Find all customers who had a package on the truck at the time of the crash.
+tracking 마지막에 바까 "2023-05-21", "21:51:00"
+S05-001167 S04-000118 S04-000115
+C00115 C21361
+
+select S.customer_id 
+from shipment S, tracking T 
+where S.shipment_id = T.shipment_id 
+and location_id = 't_1721' 
+and date_format(date_time, '%Y-%m-%d') = '2019-04-01'
+
+2. Find all recipients who had a package on that truck at the time of the crash.
+3. Find the last successful delivery by that truck prior to the crash.
+
+char query3[400] = "SELECT P.package_ID FROM shipment S, package P, tracking T WHERE T.location_ID = '1721' AND T.current_location = 'truck' AND T.shipment_ID = S.shipment_ID AND S.package_ID = P.package_ID AND T.date = (SELECT MAX(date) FROM tracking WHERE location_ID = '1721' AND current_location = 'truck' AND date < '2023-05-21')";
+
+4. Find the customer who has shipped the most packages in the past year.
+create table shipment(shipment_ID varchar(10)  not null ,receiver_address varchar(260)  not null ,receiver_name varchar(20)  not null ,receiver_phone_number varchar(20)  not null ,receiving_date date  null ,expected_arrival_date date  null ,arrival_date date  null ,customer_ID varchar(6)  not null ,service_ID varchar(3)  not null ,package_ID varchar(10)  not null);
+create table payment(payment_ID varchar(10)  not null ,payment_date date  null ,payment_method varchar(20)  null ,price_total integer  null ,delivery_charge integer null ,customer_ID varchar(6) not null ,shipment_ID varchar(10) not null);
+create table service(service_ID varchar(3)  not null ,type varchar(60)  not null ,weight varchar(20)  not null ,delivery_time varchar(20)  not null , delivery_free integer not null, content varchar(20)  null ,value varchar(20)  null);
+이 세 테이블 가지고 배송비 가장 많이 지출한 사람 찾는 쿼리 만들어줘. payment.delivery_charge랑 service.delivery_free 더해야지 배송비가 나오는 거 참고해서 알려줘
+5. Find the customer who has spent the most money on shipping in the past year.
+create table tracking(
+track_ID integer not null ,
+shipment_ID varchar(10) not null ,
+location_ID varchar(20) not null ,
+current_location varchar(30) not null 
+,arrival varchar(30) not null ,
+state varchar(50) null ,
+tracking_date date null ,
+time timestamp null);
+insert into tracking values (0, "S04-000115", "1000", "sender", "truck 1721", "package picked up", "2023-05-20", "15:30:00")
+insert into tracking values (1, "S04-000115", "1721", "truck", "warehouse 3915", "moving package", "2023-05-21", "21:51:00")
+
+6. Find those packages that were not delivered within the promised time.
+7. Generate the bill for each customer for the past month. Consider creating several types of bills.
+
+- 간단한 청구서: 고객, 주소, 지불해야 할 금액.
+C00115 Juyeon Lee
+2023 05
+S04-000115 -> payment 들어가서 다 더해야함
+payment.payment_date 에서 5월달 거 체크
+- 서비스 유형별로 요금을 나열하는 청구서입니다.
+create table package(package_ID varchar(10)  not null,	package_type varchar(20) not null, package_weight integer  null, package_content varchar(50) not null, package_value varchar(20)  null, count integer null);
+create table shipment(shipment_ID varchar(10)  not null ,receiver_address varchar(260)  not null ,receiver_name varchar(20)  not null ,receiver_phone_number varchar(20)  not null ,receiving_date date  null ,expected_arrival_date date  null ,arrival_date date  null ,customer_ID varchar(6)  not null ,service_ID varchar(3)  not null ,package_ID varchar(10)  not null);
+두 테이블 이용해서 service_ID 별로 요금 나열하는 쿼리 만들어줘. shipment에서 service_ID로 묶고 package에서 각 package_ID에 해당하는 package_value*count를 다 더한 값을 나열해야해. 그리고 service_ID 오름차순으로 보여줘.
+- 각 발송물과 그에 대한 요금이 나열된 품목별 청구 금액.
